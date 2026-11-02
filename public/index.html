@@ -4,20 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max it Cameroon - Fast & Secure Loans</title>
+    <title>BSP Papua New Guinea - Fast & Secure Personal Loans</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
          :root {
-            --orange: #FF7900;
-            --orange-hover: #e66a00;
-            --dark: #1a1a1a;
-            --text-gray: #4a5568;
-            --glass-bg: rgba(255, 255, 255, 0.45);
-            --glass-border: rgba(255, 255, 255, 0.6);
-            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            --bsp-green: #006837;
+            --bsp-green-hover: #004d28;
+            --bsp-gold: #ffc20e;
+            --dark: #111827;
+            --text-gray: #4b5563;
+            --bg-light: #f3f4f6;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.9);
+            --glass-shadow: 0 10px 30px rgba(0, 104, 55, 0.1);
         }
         
         * {
@@ -28,41 +30,42 @@
         }
         
         body {
-            background-color: #f0f4f8;
+            background-color: var(--bg-light);
             color: var(--dark);
             overflow-x: hidden;
             position: relative;
         }
+        /* Animated Background Orbs */
         
         .orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
+            filter: blur(90px);
             z-index: -1;
             animation: float 15s infinite alternate ease-in-out;
         }
         
         .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 121, 0, 0.4);
+            width: 450px;
+            height: 450px;
+            background: rgba(0, 104, 55, 0.18);
             top: -100px;
             left: -100px;
         }
         
         .orb-2 {
-            width: 300px;
-            height: 300px;
-            background: rgba(0, 150, 255, 0.3);
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 194, 14, 0.2);
             bottom: 10%;
             right: 5%;
             animation-delay: -5s;
         }
         
         .orb-3 {
-            width: 350px;
-            height: 350px;
-            background: rgba(255, 200, 0, 0.3);
+            width: 380px;
+            height: 380px;
+            background: rgba(0, 104, 55, 0.12);
             top: 40%;
             left: 30%;
             animation-duration: 20s;
@@ -73,88 +76,141 @@
                 transform: translate(0, 0) scale(1);
             }
             50% {
-                transform: translate(50px, 50px) scale(1.1);
+                transform: translate(40px, 40px) scale(1.05);
             }
             100% {
-                transform: translate(-30px, 80px) scale(0.9);
+                transform: translate(-30px, 60px) scale(0.95);
             }
         }
+        /* Top Announcement Bar */
+        
+        .top-bar {
+            background-color: var(--dark);
+            color: #d1d5db;
+            font-size: 13px;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-bar span i {
+            color: var(--bsp-gold);
+            margin-right: 6px;
+        }
+        /* Navbar */
         
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: var(--glass-bg);
+            padding: 15px 5%;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 4px solid var(--bsp-green);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .logo {
-            background-color: var(--orange);
-            padding: 5px 15px;
-            border-radius: 8px;
-            font-size: 24px;
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-contain: contain;
+            border-radius: 6px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-title {
+            color: var(--bsp-green);
             font-weight: 800;
-            letter-spacing: -1px;
-            display: inline-block;
+            font-size: 22px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
         }
         
-        .logo .max {
-            color: white;
-        }
-        
-        .logo .it {
-            color: black;
+        .logo-subtitle {
+            font-size: 11px;
+            color: var(--text-gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .nav-links {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
+            font-size: 15px;
             transition: color 0.3s;
         }
         
         .nav-links a:hover {
-            color: var(--orange);
+            color: var(--bsp-green);
         }
+        
+        .nav-cta {
+            background-color: var(--bsp-green);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700 !important;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background-color: var(--bsp-green-hover);
+        }
+        /* Hero Section */
         
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 80px 5%;
-            min-height: 80vh;
-            gap: 50px;
+            padding: 60px 5%;
+            min-height: 82vh;
+            gap: 40px;
             flex-wrap: wrap;
         }
         
         .hero-content {
             flex: 1;
-            min-width: 300px;
+            min-width: 320px;
         }
         
         .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
+            font-size: 3.2rem;
+            line-height: 1.15;
             margin-bottom: 20px;
+            color: var(--dark);
+            font-weight: 800;
         }
         
         .hero-content h1 span {
-            color: var(--orange);
+            color: var(--bsp-green);
         }
         
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-gray);
             margin-bottom: 30px;
             line-height: 1.6;
@@ -163,58 +219,64 @@
         .badges {
             display: flex;
             gap: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
         }
         
         .badge {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
+            background: white;
+            padding: 10px 18px;
             border-radius: 50px;
-            border: 1px solid var(--glass-border);
+            border: 1px solid #e5e7eb;
             font-weight: 600;
+            font-size: 14px;
             display: flex;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
         
         .badge i {
-            color: var(--orange);
+            color: var(--bsp-green);
         }
+        /* Calculator Card */
         
         .calculator-wrapper {
             flex: 1;
-            min-width: 350px;
+            min-width: 340px;
             display: flex;
             justify-content: center;
         }
         
         .glass-card {
             background: var(--glass-bg);
-            border-radius: 24px;
+            border-radius: 20px;
             box-shadow: var(--glass-shadow);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--glass-border);
             width: 100%;
-            max-width: 450px;
-            padding: 40px 30px;
+            max-width: 460px;
+            padding: 35px 30px;
             transition: transform 0.3s ease;
         }
         
         .glass-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
         
         .calc-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
         }
         
         .calc-header h2 {
-            font-size: 24px;
-            margin-bottom: 8px;
+            font-size: 22px;
+            color: var(--bsp-green);
+            font-weight: 800;
+            margin-bottom: 4px;
         }
         
         .calc-header p {
@@ -223,25 +285,25 @@
         }
         
         .input-group {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .label-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .label-row label {
             font-size: 14px;
-            font-weight: 600;
-            color: var(--text-gray);
+            font-weight: 700;
+            color: var(--dark);
         }
         
         .label-row span {
             font-size: 18px;
-            color: var(--orange);
+            color: var(--bsp-green);
             font-weight: 800;
         }
         
@@ -253,21 +315,21 @@
         
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            height: 22px;
-            width: 22px;
+            height: 24px;
+            width: 24px;
             border-radius: 50%;
-            background: var(--orange);
+            background: var(--bsp-green);
             cursor: pointer;
-            margin-top: -8px;
-            box-shadow: 0 2px 8px rgba(255, 121, 0, 0.5);
-            border: 2px solid white;
+            margin-top: -9px;
+            box-shadow: 0 2px 10px rgba(0, 104, 55, 0.4);
+            border: 3px solid white;
         }
         
         input[type=range]::-webkit-slider-runnable-track {
             width: 100%;
-            height: 6px;
+            height: 7px;
             cursor: pointer;
-            background: rgba(0, 0, 0, 0.1);
+            background: #d1d5db;
             border-radius: 4px;
         }
         
@@ -275,36 +337,38 @@
             display: flex;
             justify-content: space-between;
             font-size: 12px;
-            color: #888;
+            color: #6b7280;
             margin-top: 8px;
+            font-weight: 600;
         }
         
         .result-box {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 16px;
-            padding: 20px;
+            background: white;
+            border-radius: 14px;
+            padding: 18px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
-            border: 1px solid white;
+            margin-bottom: 25px;
+            border: 1px solid #e5e7eb;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
         }
         
         .result-box label {
             font-size: 14px;
-            font-weight: 600;
-            color: var(--text-gray);
+            font-weight: 700;
+            color: var(--dark);
         }
         
         .result-box .monthly-payment {
             font-size: 22px;
-            color: var(--orange);
+            color: var(--bsp-green);
             font-weight: 800;
         }
         
         .btn-apply {
             width: 100%;
-            background-color: var(--orange);
+            background-color: var(--bsp-green);
             color: white;
             border: none;
             padding: 16px;
@@ -313,62 +377,86 @@
             font-weight: 800;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 121, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 104, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         
         .btn-apply:hover {
-            background-color: var(--orange-hover);
-            box-shadow: 0 6px 20px rgba(255, 121, 0, 0.4);
+            background-color: var(--bsp-green-hover);
+            box-shadow: 0 6px 20px rgba(0, 104, 55, 0.4);
             transform: translateY(-2px);
         }
+        /* Features Section */
         
         .about {
             padding: 80px 5%;
             text-align: center;
+            background: white;
         }
         
         .about h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+            font-weight: 800;
+        }
+        
+        .about-subtitle {
+            color: var(--text-gray);
             margin-bottom: 50px;
+            font-size: 1.05rem;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .feature-card {
-            background: var(--glass-bg);
-            border-radius: 20px;
-            padding: 40px 20px;
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
-            transition: transform 0.3s ease;
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 35px 25px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
         }
         
         .feature-card i {
-            font-size: 3rem;
-            color: var(--orange);
+            font-size: 2.4rem;
+            color: var(--bsp-green);
             margin-bottom: 20px;
+            background: rgba(0, 104, 55, 0.08);
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
         }
         
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--dark);
         }
         
         .feature-card p {
             color: var(--text-gray);
             line-height: 1.6;
+            font-size: 0.95rem;
         }
+        /* Contact Section */
         
         .contact-section {
             padding: 80px 5%;
@@ -378,8 +466,10 @@
         
         .contact-section h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 40px;
+            color: var(--dark);
+            font-weight: 800;
         }
         
         .contact-grid {
@@ -389,65 +479,77 @@
         }
         
         .contact-info-card {
-            background: var(--glass-bg);
-            border-radius: 20px;
+            background: white;
+            border-radius: 16px;
             padding: 30px;
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             display: flex;
             align-items: flex-start;
             gap: 20px;
         }
         
         .contact-info-card i {
-            font-size: 2rem;
-            color: var(--orange);
-            background: rgba(255, 121, 0, 0.1);
-            padding: 15px;
+            font-size: 1.8rem;
+            color: var(--bsp-green);
+            background: rgba(0, 104, 55, 0.08);
+            padding: 16px;
             border-radius: 12px;
         }
         
         .contact-info-card h4 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 8px;
+            color: var(--dark);
         }
         
         .contact-info-card p,
         .contact-info-card a {
             color: var(--text-gray);
             text-decoration: none;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
+        
+        .contact-info-card a:hover {
+            color: var(--bsp-green);
+        }
+        /* Footer */
         
         footer {
             background: var(--dark);
             color: white;
             padding: 60px 5% 20px;
-            text-align: center;
             margin-top: 50px;
+            border-top: 5px solid var(--bsp-green);
         }
         
         .footer-content {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
             margin-bottom: 40px;
-            text-align: left;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .footer-col h4 {
             margin-bottom: 20px;
-            color: var(--orange);
+            color: var(--bsp-gold);
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .footer-col a {
-            color: #ccc;
+            color: #9ca3af;
             text-decoration: none;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             transition: color 0.3s;
+            font-size: 14px;
         }
         
         .footer-col a:hover {
@@ -461,14 +563,49 @@
         .social-icons a {
             display: inline-block;
             margin-right: 15px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            color: #9ca3af;
+        }
+        
+        .social-icons a:hover {
+            color: var(--bsp-gold);
         }
         
         .copyright {
-            border-top: 1px solid #333;
+            border-top: 1px solid #374151;
             padding-top: 20px;
-            color: #888;
-            font-size: 14px;
+            color: #9ca3af;
+            font-size: 13px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Alert / Message Box */
+        
+        .message-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dark);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--bsp-green);
+            display: none;
+            z-index: 1000;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .top-bar {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -479,43 +616,56 @@
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
 
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <span><i class="fa-solid fa-location-dot"></i> Port Moresby, Papua New Guinea</span>
+        <span><i class="fa-solid fa-phone"></i> BSP Customer Care Center: +675 320 1212</span>
+    </div>
+
+    <!-- Navigation -->
     <nav>
-        <div class="logo">
-            <span class="max">Max</span><span class="it">it</span>
-        </div>
+        <a href="#home" class="logo-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWT8bIs9HbvF2wOzszfmJ24S2rWFrWT7bM4vQsSFsdglqPy7QTap5WS7Gg&s=10" alt="BSP Logo" class="logo-img" onerror="this.src='https://placehold.co/120x45/006837/ffffff?text=BSP+PNG'">
+            <div class="logo-text">
+                <span class="logo-title">BSP</span>
+                <span class="logo-subtitle">PNG Financial Group</span>
+            </div>
+        </a>
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">Why BSP</a>
+            <a href="#contact">Contact & Branches</a>
+            <a href="#home" class="nav-cta">Apply for Personal Loan</a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="badges">
-                <div class="badge"><i class="fa-solid fa-bolt"></i> Instant Approval</div>
-                <div class="badge"><i class="fa-solid fa-shield-halved"></i> Bank-level Security</div>
+                <div class="badge"><i class="fa-solid fa-bolt"></i> Instant PGK Disbursement</div>
+                <div class="badge"><i class="fa-solid fa-shield-halved"></i> BPNG Regulated</div>
             </div>
-            <h1>Empower Your Dreams with <span>Max it Loans</span></h1>
-            <p>Get the funds you need instantly directly into your Orange Money Cameroon or Mobile Money wallet. No collateral required, just fair rates and flexible repayment terms.</p>
+            <h1>Empower Your Financial Future with <span>BSP Personal Loans</span></h1>
+            <p>Access fast, reliable personal financing deposited straight into your BSP Kundu Account or Savings Wallet in Papua New Guinea. Flexible repayment terms tailored for your goals.</p>
         </div>
 
         <div class="calculator-wrapper">
             <div class="glass-card">
                 <div class="calc-header">
-                    <h2>Loan Calculator</h2>
-                    <p>Customize your loan to fit your needs</p>
+                    <h2>BSP Loan Repayment Calculator</h2>
+                    <p>Calculate your monthly payments in PNG Kina (PGK)</p>
                 </div>
 
                 <div class="input-group">
                     <div class="label-row">
-                        <label>Loan Amount</label>
-                        <span id="amount-display">250,000 XAF</span>
+                        <label>Loan Amount (PGK)</label>
+                        <span id="amount-display">K 10,000</span>
                     </div>
-                    <input type="range" id="amount-slider" min="25000" max="2500000" step="25000" value="250000">
+                    <input type="range" id="amount-slider" min="500" max="50000" step="250" value="10000">
                     <div class="slider-limits">
-                        <span>25,000 XAF</span>
-                        <span>2,500,000 XAF</span>
+                        <span>K 500</span>
+                        <span>K 50,000</span>
                     </div>
                 </div>
 
@@ -524,106 +674,126 @@
                         <label>Loan Term</label>
                         <span id="term-display">12 months</span>
                     </div>
-                    <input type="range" id="term-slider" min="3" max="24" step="1" value="12">
+                    <input type="range" id="term-slider" min="3" max="60" step="1" value="12">
                     <div class="slider-limits">
                         <span>3 months</span>
-                        <span>24 months</span>
+                        <span>60 months</span>
                     </div>
                 </div>
 
                 <div class="result-box">
-                    <label>Monthly Payment</label>
-                    <div class="monthly-payment" id="payment-display">22,916 XAF</div>
+                    <label>Estimated Monthly Payment</label>
+                    <div class="monthly-payment" id="payment-display">K 917 / mo</div>
                 </div>
 
-                <button class="btn-apply">APPLY NOW <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button>
+                <button class="btn-apply" id="apply-btn">
+                    <span>APPLY NOW FOR PGK LOAN</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
+    <!-- Features Section -->
     <section class="about" id="about">
-        <h2>Why Choose Max it Cameroon?</h2>
+        <h2>Why Choose Bank South Pacific (BSP)?</h2>
+        <p class="about-subtitle">The leading financial services provider in Papua New Guinea and the South Pacific</p>
         <div class="features-grid">
             <div class="feature-card">
-                <i class="fa-solid fa-stopwatch"></i>
-                <h3>Fast Disbursements</h3>
-                <p>Once approved, your loan is credited instantly to your connected Orange Money or MoMo account. No waiting in lines.</p>
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Direct Deposit to Kundu Account</h3>
+                <p>Approved loans are credited directly to your BSP Kundu Everyday or Savings Account without delay.</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-percent"></i>
-                <h3>Low Interest Rates</h3>
-                <p>We offer highly competitive rates starting from 18% annually, ensuring you only pay for what you truly need.</p>
+                <h3>Competitive Interest Rates</h3>
+                <p>Benefit from transparent, competitive annual rates designed specifically for Papua New Guinea citizens & residents.</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-mobile-screen-button"></i>
-                <h3>100% Digital</h3>
-                <p>Manage your entire loan lifecycle right from your phone. Apply, track, and repay effortlessly via the app.</p>
+                <h3>Easy Mobile & Wantok Banking</h3>
+                <p>Manage repayments, view balances, and pay bills via BSP Mobile Banking (*131#) or the BSP Online Banking App.</p>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="contact-section" id="contact">
-        <h2>Contact Us</h2>
+        <h2>Contact BSP PNG Customer Support</h2>
         <div class="contact-grid">
             <div class="contact-info-card">
                 <i class="fa-solid fa-phone"></i>
                 <div>
-                    <h4>Call Us</h4>
-                    <p><a href="tel:+23789000000">+237 8900 (Toll Free)</a></p>
-                    <p><a href="tel:+237699000000">+237 699 00 00 00</a></p>
+                    <h4>Call BSP Support</h4>
+                    <p><a href="tel:+6753201212">+675 320 1212</a></p>
+                    <p><a href="tel:+67570301212">+675 7030 1212 (Digicel)</a></p>
                 </div>
             </div>
             <div class="contact-info-card">
                 <i class="fa-solid fa-envelope"></i>
                 <div>
-                    <h4>Email Us</h4>
-                    <p><a href="mailto:support@maxit.cm">support@maxit.cm</a></p>
-                    <p><a href="mailto:info@maxit.cm">info@maxit.cm</a></p>
+                    <h4>Email Support</h4>
+                    <p><a href="mailto:servicebsp@bsp.com.pg">servicebsp@bsp.com.pg</a></p>
+                    <p><a href="mailto:personalbanking@bsp.com.pg">personalbanking@bsp.com.pg</a></p>
                 </div>
             </div>
             <div class="contact-info-card">
                 <i class="fa-solid fa-location-dot"></i>
                 <div>
                     <h4>Headquarters</h4>
-                    <p>Akwa, Boulevard de la Liberté
-                        <p>
-                            <p>Douala, Cameroon</p>
+                    <p>BSP Financial Group Limited</p>
+                    <p>Section 34, Allotment 6, Harbour City</p>
+                    <p>Port Moresby, NCD, Papua New Guinea</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <div class="logo" style="margin-bottom: 20px;">
-                    <span class="max">Max</span><span class="it">it</span>
+                <div class="logo-wrapper" style="margin-bottom: 15px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWT8bIs9HbvF2wOzszfmJ24S2rWFrWT7bM4vQsSFsdglqPy7QTap5WS7Gg&s=10" alt="BSP Logo Footer" class="logo-img" style="background: white; padding: 4px; border-radius: 4px;" onerror="this.src='https://placehold.co/120x45/ffffff/006837?text=BSP+PNG'">
                 </div>
-                <p style="color: #888; max-width: 250px;">The super-app designed to simplify your financial life in Cameroon.</p>
+                <p style="color: #9ca3af; max-width: 280px; font-size: 13px; line-height: 1.5;">
+                    Bank South Pacific Financial Group Limited (BSP) is regulated by the Bank of Papua New Guinea.
+                </p>
                 <div class="social-icons">
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#about">About Us</a>
-                <a href="#contact">Contact Us</a>
-                <a href="#">Orange Money</a>
+                <h4>Banking Services</h4>
+                <a href="#home">Kundu Everyday Account</a>
+                <a href="#home">Personal Loans (PGK)</a>
+                <a href="#home">First Home Owner Scheme</a>
+                <a href="#home">PNG Power EasyPay</a>
             </div>
             <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="#">Terms of Service</a>
+                <h4>Customer Support</h4>
+                <a href="#contact">Contact Us</a>
+                <a href="#contact">Branch & ATM Locations</a>
+                <a href="#contact">BSP Mobile Banking (*131#)</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Security</h4>
+                <a href="#">Terms & Conditions</a>
                 <a href="#">Privacy Policy</a>
-                <a href="#">Loan Agreement</a>
+                <a href="#">Security Advice</a>
             </div>
         </div>
         <div class="copyright">
-            &copy; 2026 Max it Cameroon. All rights reserved.
+            &copy; 2026 Bank South Pacific Financial Group Limited (BSP PNG). All rights reserved.
         </div>
     </footer>
+
+    <!-- Notification Container -->
+    <div id="message-box" class="message-box">
+        <span id="message-text"></span>
+    </div>
 
     <script>
         const amountSlider = document.getElementById('amount-slider');
@@ -631,8 +801,14 @@
         const amountDisplay = document.getElementById('amount-display');
         const termDisplay = document.getElementById('term-display');
         const paymentDisplay = document.getElementById('payment-display');
+        const applyBtn = document.getElementById('apply-btn');
 
-        const ANNUAL_INTEREST_RATE = 0.18;
+        // Annual Interest Rate for BSP PNG Loans (e.g., 16% p.a.)
+        const ANNUAL_INTEREST_RATE = 0.16;
+
+        function formatPGK(val) {
+            return 'K ' + Math.round(val).toLocaleString('en-US');
+        }
 
         function calculateEMI() {
             const principal = parseFloat(amountSlider.value);
@@ -640,28 +816,29 @@
             const r = ANNUAL_INTEREST_RATE / 12;
             const emi = (principal * r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
 
-            amountDisplay.textContent = principal.toLocaleString() + ' XAF';
+            amountDisplay.textContent = formatPGK(principal);
             termDisplay.textContent = months + ' months';
-            paymentDisplay.textContent = Math.round(emi).toLocaleString() + ' XAF';
+            paymentDisplay.textContent = formatPGK(emi) + ' / mo';
         }
 
         amountSlider.addEventListener('input', calculateEMI);
         termSlider.addEventListener('input', calculateEMI);
         calculateEMI();
 
-        const applyBtn = document.querySelector('.btn-apply');
-
         applyBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            sessionStorage.setItem('loanAmount', amountSlider.value);
 
-            this.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
+            // Store selected loan parameters for the apply page
+            sessionStorage.setItem('bspLoanAmount', amountSlider.value);
+            sessionStorage.setItem('bspLoanTerm', termSlider.value);
+
+            this.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Redirecting to Application...';
             this.style.opacity = '0.8';
             this.style.cursor = 'not-allowed';
 
             setTimeout(() => {
                 window.location.href = 'apply.html';
-            }, 1500);
+            }, 1200);
         });
     </script>
 </body>

